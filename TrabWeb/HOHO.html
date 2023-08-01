@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sequência Ho</title>
+</head>
+<body>
+    <h1>Sequência Ho</h1>
+    <form>
+        <label for="numInput">Digite um número:</label>
+        <input type="number" id="numInput" required>
+        <button type="button" onclick="gerarSequencia()">Gerar Sequência</button>
+    </form>
+    <p id="resultado"></p>
+    
+    <script>
+        function gerarSequencia() {
+            var num = parseInt(document.getElementById("numInput").value);
+
+            if (num >= 0 && num <= 1000000) {
+                var sequencia = "";
+                for (var i = 1; i < num; i++) {
+                    sequencia += "Ho ";
+                }
+                sequencia += "Ho!";
+                document.getElementById("resultado").innerText = sequencia;
+            } else {
+                document.getElementById("resultado").innerText = "Por favor, digite um número entre 0 e 1000000.";
+            }
+        }
+    </script>
+</body>
+</html>

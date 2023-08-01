@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Encontrar Aluno com Maior Nota</title>
+</head>
+
+<body>
+    <h1>Encontrar Aluno com Maior Nota</h1>
+    <label for="numAlunos">Número de Alunos:</label>
+    <input type="number" id="numAlunos">
+    <button onclick="encontrarMaiorNota()">Encontrar Maior Nota</button>
+
+    <div id="output"></div>
+
+    <script>
+        function encontrarMaiorNota() {
+            const numAlunos = parseInt(document.getElementById("numAlunos").value);
+            let matriculaMaiorNota = 0;
+            let maiorNota = 0;
+
+            for (let i = 0; i < numAlunos; i++) {
+                const matricula = parseInt(prompt(`Digite a matrícula do aluno ${i + 1}:`));
+                const nota = parseFloat(prompt(`Digite a nota do aluno ${i + 1}:`));
+
+                if (nota > maiorNota && nota >= 8) {
+                    maiorNota = nota;
+                    matriculaMaiorNota = matricula;
+                }
+            }
+
+            const outputDiv = document.getElementById("output");
+            if (maiorNota === 0) {
+                outputDiv.innerText = "Nota mínima não alcançada";
+            } else {
+                outputDiv.innerText = `Aluno com maior nota: ${matriculaMaiorNota}`;
+            }
+        }
+    </script>
+</body>
+
+</html>

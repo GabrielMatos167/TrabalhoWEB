@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Ímpares</title>
+</head>
+<body>
+    <h1>Lista de Números Ímpares</h1>
+    <label for="numero">Digite um número:</label>
+    <input type="number" id="numero" min="1">
+    <button onclick="mostrarImpares()">Mostrar Ímpares</button>
+    <p id="resultado"></p>
+
+    <script>
+        function mostrarImpares() {
+            var inputNumero = document.getElementById('numero');
+            var numero = parseInt(inputNumero.value);
+            var resultado = document.getElementById('resultado');
+            resultado.innerHTML = '';
+
+            for (var i = 1; i <= numero; i += 2) {
+                resultado.innerHTML += i + '<br>';
+            }
+        }
+    </script>
+</body>
+</html>
